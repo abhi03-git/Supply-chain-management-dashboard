@@ -1,0 +1,2551 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Date Aggregation' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;year&quot;'>
+        <calculation class='tableau' formula='&quot;year&quot;' />
+        <members>
+          <member value='&quot;year&quot;' />
+          <member value='&quot;quarter&quot;' />
+          <member value='&quot;month&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='supply_chain_data (1)' inline='true' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='supply_chain_data (1)' name='textscan.0rls8h70ihxsdc1dgqr6s0y6pnsj'>
+            <connection class='textscan' directory='C:/Users/abhis/Downloads' filename='supply_chain_data (1).csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Costs]' />
+            <value name='[Manufacturing costs]' />
+            <value name='[Shipping costs]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[supply_chain_data (1).csv].[Costs]' />
+              <field name='[supply_chain_data (1).csv].[Manufacturing costs]' />
+              <field name='[supply_chain_data (1).csv].[Shipping costs]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0rls8h70ihxsdc1dgqr6s0y6pnsj' name='supply_chain_data (1).csv' table='[supply_chain_data (1)#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='Product type' ordinal='0' />
+              <column datatype='string' name='Product ID' ordinal='1' />
+              <column datatype='real' name='Price' ordinal='2' />
+              <column datatype='integer' name='Availability' ordinal='3' />
+              <column datatype='integer' name='Number of products sold' ordinal='4' />
+              <column datatype='real' name='Revenue generated' ordinal='5' />
+              <column datatype='string' name='Customer demographics' ordinal='6' />
+              <column datatype='integer' name='Inventory levels' ordinal='7' />
+              <column datatype='integer' name='Lead times' ordinal='8' />
+              <column datatype='integer' name='Order quantities' ordinal='9' />
+              <column datatype='integer' name='Shipping times' ordinal='10' />
+              <column datatype='string' name='Shipping carriers' ordinal='11' />
+              <column datatype='real' name='Shipping costs' ordinal='12' />
+              <column datatype='string' name='Supplier name' ordinal='13' />
+              <column datatype='string' name='Location' ordinal='14' />
+              <column datatype='integer' name='Lead time' ordinal='15' />
+              <column datatype='integer' name='Production volumes' ordinal='16' />
+              <column datatype='integer' name='Manufacturing lead time' ordinal='17' />
+              <column datatype='real' name='Manufacturing costs' ordinal='18' />
+              <column datatype='string' name='Fullfillment Status' ordinal='19' />
+              <column datatype='real' name='Defect rates' ordinal='20' />
+              <column datatype='string' name='Transportation modes' ordinal='21' />
+              <column datatype='string' name='Routes' ordinal='22' />
+              <column datatype='real' name='Costs' ordinal='23' />
+              <column datatype='datetime' date-parse-format='dd-MMM-yy' name='Date' ordinal='24' />
+              <column datatype='integer' name='Safety Stock' ordinal='25' />
+              <column datatype='real' name='Reorder Point' ordinal='26' />
+              <column datatype='string' name='Delivery Date' ordinal='27' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product type]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Product type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product ID]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Product ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Price]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Price</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Availability</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Availability]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Availability</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of products sold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of products sold]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Number of products sold</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Revenue generated</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Revenue generated]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Revenue generated</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer demographics</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer demographics]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Customer demographics</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Inventory levels</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Inventory levels]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Inventory levels</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lead times</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Lead times]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Lead times</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order quantities</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Order quantities]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Order quantities</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shipping times</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Shipping times]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Shipping times</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shipping carriers</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Shipping carriers]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Shipping carriers</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Supplier name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Supplier name]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Supplier name</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lead time</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Lead time]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Lead time</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Production volumes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Production volumes]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Production volumes</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Manufacturing lead time</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Manufacturing lead time]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Manufacturing lead time</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fullfillment Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Fullfillment Status]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Fullfillment Status</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Defect rates</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Defect rates]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Defect rates</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transportation modes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Transportation modes]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Transportation modes</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Routes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Routes]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Routes</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Safety Stock</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Safety Stock]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Safety Stock</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reorder Point</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Reorder Point]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Reorder Point</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Delivery Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Delivery Date]</local-name>
+            <parent-name>[supply_chain_data (1).csv]</parent-name>
+            <remote-alias>Delivery Date</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='On-Time Delivery' datatype='integer' name='[Calculation_239253789924053000]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Fullfillment Status] = &quot;Pass&quot; THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='ON-Time Rate' datatype='real' default-format='p0.00%' name='[Calculation_239253789924892685]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_239253789924053000]) / COUNT([Fullfillment Status])' />
+      </column>
+      <column datatype='string' name='[Fullfillment Status]' role='dimension' type='nominal' />
+      <column caption='Cost Type' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Cost Value' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Product type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Supplier name]' role='dimension' type='nominal' />
+      <column caption='supply_chain_data (1).csv' datatype='table' name='[__tableau_internal_object_id__].[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]' role='measure' type='quantitative' />
+      <column-instance column='[Fullfillment Status]' derivation='None' name='[none:Fullfillment Status:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Product type]' derivation='None' name='[none:Product type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Supplier name]' derivation='None' name='[none:Supplier name:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/abhis/OneDrive/Documents/My Tableau Repository/Datasources/supply_chain_data (1).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/23/2025 06:09:55 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='supply_chain_data (1)' increment-value='%null%' refresh-type='create' rows-inserted='300' timestamp-start='2025-03-23 06:09:54.599' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Product type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Product type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Product type</remote-alias>
+              <ordinal>0</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Product ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Product ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Product ID</remote-alias>
+              <ordinal>1</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Price]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Price</remote-alias>
+              <ordinal>2</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Availability</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Availability]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Availability</remote-alias>
+              <ordinal>3</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>63</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of products sold</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Number of products sold]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Number of products sold</remote-alias>
+              <ordinal>4</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Revenue generated</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Revenue generated]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Revenue generated</remote-alias>
+              <ordinal>5</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Customer demographics</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Customer demographics]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Customer demographics</remote-alias>
+              <ordinal>6</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Inventory levels</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Inventory levels]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Inventory levels</remote-alias>
+              <ordinal>7</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lead times</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Lead times]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Lead times</remote-alias>
+              <ordinal>8</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>29</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Order quantities</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Order quantities]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Order quantities</remote-alias>
+              <ordinal>9</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>61</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shipping times</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Shipping times]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Shipping times</remote-alias>
+              <ordinal>10</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shipping carriers</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Shipping carriers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Shipping carriers</remote-alias>
+              <ordinal>11</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Supplier name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Supplier name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Supplier name</remote-alias>
+              <ordinal>12</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Location]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Location</remote-alias>
+              <ordinal>13</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lead time</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Lead time]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Lead time</remote-alias>
+              <ordinal>14</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>29</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Production volumes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Production volumes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Production volumes</remote-alias>
+              <ordinal>15</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Manufacturing lead time</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Manufacturing lead time]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Manufacturing lead time</remote-alias>
+              <ordinal>16</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Fullfillment Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Fullfillment Status]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Fullfillment Status</remote-alias>
+              <ordinal>17</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Defect rates</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Defect rates]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Defect rates</remote-alias>
+              <ordinal>18</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Transportation modes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Transportation modes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Transportation modes</remote-alias>
+              <ordinal>19</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Routes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Routes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Routes</remote-alias>
+              <ordinal>20</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>21</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Safety Stock</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Safety Stock]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Safety Stock</remote-alias>
+              <ordinal>22</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Reorder Point</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Reorder Point]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Reorder Point</remote-alias>
+              <ordinal>23</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Delivery Date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Delivery Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Delivery Date</remote-alias>
+              <ordinal>24</ordinal>
+              <family>supply_chain_data (1).csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>56</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>300</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Supplier name:nk]' palette='tableau10_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Supplier 1&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Supplier 5&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Supplier 4&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Supplier 3&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Supplier 2&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Pivot Field Names:nk]' palette='superfishel_stone_10_0' type='palette'>
+            <map to='#067d77'>
+              <bucket>&quot;Costs&quot;</bucket>
+            </map>
+            <map to='#ef6f6a'>
+              <bucket>&quot;Shipping costs&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;Manufacturing costs&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Product type:nk]' palette='blue_red_brown_10_0' type='palette'>
+            <map to='#466f9d'>
+              <bucket>&quot;cosmetics&quot;</bucket>
+            </map>
+            <map to='#ed444a'>
+              <bucket>&quot;skincare&quot;</bucket>
+            </map>
+            <map to='#feb5a2'>
+              <bucket>&quot;haircare&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Fullfillment Status:nk]' palette='sf_watermelon' type='palette'>
+            <map to='#64cdcc'>
+              <bucket>&quot;Pass&quot;</bucket>
+            </map>
+            <map to='#eb1e2c'>
+              <bucket>&quot;Fail&quot;</bucket>
+            </map>
+            <map to='#f9a729'>
+              <bucket>&quot;Pending&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Product type' />
+        <field-sort-custom-order field='Product ID' />
+        <field-sort-custom-order field='Price' />
+        <field-sort-custom-order field='Availability' />
+        <field-sort-custom-order field='Number of products sold' />
+        <field-sort-custom-order field='Revenue generated' />
+        <field-sort-custom-order field='Customer demographics' />
+        <field-sort-custom-order field='Inventory levels' />
+        <field-sort-custom-order field='Lead times' />
+        <field-sort-custom-order field='Order quantities' />
+        <field-sort-custom-order field='Shipping times' />
+        <field-sort-custom-order field='Shipping carriers' />
+        <field-sort-custom-order field='Shipping costs' />
+        <field-sort-custom-order field='Supplier name' />
+        <field-sort-custom-order field='Location' />
+        <field-sort-custom-order field='Lead time' />
+        <field-sort-custom-order field='Production volumes' />
+        <field-sort-custom-order field='Manufacturing lead time' />
+        <field-sort-custom-order field='Manufacturing costs' />
+        <field-sort-custom-order field='Fullfillment Status' />
+        <field-sort-custom-order field='Defect rates' />
+        <field-sort-custom-order field='Transportation modes' />
+        <field-sort-custom-order field='Routes' />
+        <field-sort-custom-order field='Costs' />
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Safety Stock' />
+        <field-sort-custom-order field='Reorder Point' />
+        <field-sort-custom-order field='Delivery Date' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Calculation_239253789924053000' />
+        <field-sort-custom-order field='Calculation_239253789924892685' />
+        <field-sort-custom-order field='Calculation_239253789924491274' />
+        <field-sort-custom-order field='Calculation_239253789924261897' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='supply_chain_data (1).csv' id='supply_chain_data (1).csv_C597D7E24EB74216861DF2E68F94106C'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Costs]' />
+                  <value name='[Manufacturing costs]' />
+                  <value name='[Shipping costs]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[supply_chain_data (1).csv].[Costs]' />
+                    <field name='[supply_chain_data (1).csv].[Manufacturing costs]' />
+                    <field name='[supply_chain_data (1).csv].[Shipping costs]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.0rls8h70ihxsdc1dgqr6s0y6pnsj' name='supply_chain_data (1).csv' table='[supply_chain_data (1)#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='string' name='Product type' ordinal='0' />
+                    <column datatype='string' name='Product ID' ordinal='1' />
+                    <column datatype='real' name='Price' ordinal='2' />
+                    <column datatype='integer' name='Availability' ordinal='3' />
+                    <column datatype='integer' name='Number of products sold' ordinal='4' />
+                    <column datatype='real' name='Revenue generated' ordinal='5' />
+                    <column datatype='string' name='Customer demographics' ordinal='6' />
+                    <column datatype='integer' name='Inventory levels' ordinal='7' />
+                    <column datatype='integer' name='Lead times' ordinal='8' />
+                    <column datatype='integer' name='Order quantities' ordinal='9' />
+                    <column datatype='integer' name='Shipping times' ordinal='10' />
+                    <column datatype='string' name='Shipping carriers' ordinal='11' />
+                    <column datatype='real' name='Shipping costs' ordinal='12' />
+                    <column datatype='string' name='Supplier name' ordinal='13' />
+                    <column datatype='string' name='Location' ordinal='14' />
+                    <column datatype='integer' name='Lead time' ordinal='15' />
+                    <column datatype='integer' name='Production volumes' ordinal='16' />
+                    <column datatype='integer' name='Manufacturing lead time' ordinal='17' />
+                    <column datatype='real' name='Manufacturing costs' ordinal='18' />
+                    <column datatype='string' name='Fullfillment Status' ordinal='19' />
+                    <column datatype='real' name='Defect rates' ordinal='20' />
+                    <column datatype='string' name='Transportation modes' ordinal='21' />
+                    <column datatype='string' name='Routes' ordinal='22' />
+                    <column datatype='real' name='Costs' ordinal='23' />
+                    <column datatype='datetime' date-parse-format='dd-MMM-yy' name='Date' ordinal='24' />
+                    <column datatype='integer' name='Safety Stock' ordinal='25' />
+                    <column datatype='real' name='Reorder Point' ordinal='26' />
+                    <column datatype='string' name='Delivery Date' ordinal='27' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Average Delivery Time by Supplier'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='integer' name='[Lead time]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Supplier name]' role='dimension' type='nominal' />
+            <column-instance column='[Lead time]' derivation='Avg' name='[avg:Lead time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Supplier name]' derivation='None' name='[none:Supplier name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' value='162' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[avg:Lead time:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='640' />
+                <format attr='maxheight' value='640' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[avg:Lead time:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]</cols>
+      </table>
+      <simple-id uuid='{DBA268FD-1D15-4090-A9BA-361BCD39B44F}' />
+    </worksheet>
+    <worksheet name='Cost Distribution by Type'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column caption='Cost Type' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Cost Value' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Pivot Field Names:nk]' />
+              <wedge-size column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Pivot Field Names:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.087458610534668' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1635858C-734B-4A20-A17F-A0FC3B5998CA}' />
+    </worksheet>
+    <worksheet name='Current Inventory Levels by Product and Warehouse'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='integer' name='[Inventory levels]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Location]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Product type]' role='dimension' type='nominal' />
+            <column-instance column='[Location]' derivation='None' name='[none:Location:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Product type]' derivation='None' name='[none:Product type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Inventory levels]' derivation='Sum' name='[sum:Inventory levels:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Location:nk]' value='77' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Inventory levels:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='657' />
+                <format attr='maxheight' value='657' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Inventory levels:qk]</rows>
+        <cols>([federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk] / [federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Location:nk])</cols>
+      </table>
+      <simple-id uuid='{0E668DE5-3E10-4820-BC7D-671E954F25EE}' />
+    </worksheet>
+    <worksheet name='Defect Rate Trends Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Defect rates]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Supplier name]' role='dimension' type='nominal' />
+            <column-instance column='[Defect rates]' derivation='Avg' name='[avg:Defect rates:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Supplier name]' derivation='None' name='[none:Supplier name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Defect rates]' derivation='Sum' name='[sum:Defect rates:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[avg:Defect rates:qk]' field-type='quantitative' max='5.6391242980527494' min='-0.1233404805563037' range-type='fixed' scope='rows' type='space' />
+            <format attr='height' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]' value='114' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]' value='12' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='24' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Defect rates:qk]' />
+              <tooltip column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Defect rates:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='586' />
+                <format attr='maxheight' value='586' />
+                <format attr='minwidth' value='1172' />
+                <format attr='maxwidth' value='1172' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[avg:Defect rates:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{F1611A4C-9C83-4586-9EED-75DB8D575226}' />
+    </worksheet>
+    <worksheet name='Delivery Status Trends Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column caption='On-Time Delivery' datatype='integer' name='[Calculation_239253789924053000]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Fullfillment Status] = &quot;Pass&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Fullfillment Status]' role='dimension' type='nominal' />
+            <column caption='Cost Value' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Fullfillment Status]' derivation='None' name='[none:Fullfillment Status:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_239253789924053000]' derivation='Sum' name='[sum:Calculation_239253789924053000:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <lod column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' />
+              <lod column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <lod column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Calculation_239253789924053000:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{C0514C8F-079F-4C28-ADA0-2C6450C603AB}' />
+    </worksheet>
+    <worksheet name='Inventory Trends Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Inventory levels]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product type]' role='dimension' type='nominal' />
+            <column-instance column='[Product type]' derivation='None' name='[none:Product type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Inventory levels]' derivation='Sum' name='[sum:Inventory levels:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#606b76' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Inventory levels:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='1039' />
+                <format attr='maxwidth' value='1039' />
+                <format attr='minheight' value='685' />
+                <format attr='maxheight' value='685' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Inventory levels:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{FDD2E931-95C1-48DA-ABC2-646C4D188D10}' />
+    </worksheet>
+    <worksheet name='On-Time Delivery Rates by Product or Customer'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column caption='On-Time Delivery' datatype='integer' name='[Calculation_239253789924053000]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Fullfillment Status] = &quot;Pass&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column caption='ON-Time Rate' datatype='real' default-format='p0.00%' name='[Calculation_239253789924892685]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_239253789924053000]) / COUNT([Fullfillment Status])' />
+            </column>
+            <column datatype='string' name='[Fullfillment Status]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Product type]' role='dimension' type='nominal' />
+            <column-instance column='[Product type]' derivation='None' name='[none:Product type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_239253789924892685]' derivation='User' name='[usr:Calculation_239253789924892685:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' value='97' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='text-align' value='auto' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]</cols>
+      </table>
+      <simple-id uuid='{64D9B9B9-1526-4B4B-BEB0-F90953DC0586}' />
+    </worksheet>
+    <worksheet name='Order Fulfillment Status Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Fullfillment Status]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Inventory levels]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fullfillment Status]' derivation='None' name='[none:Fullfillment Status:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Inventory levels]' derivation='Sum' name='[sum:Inventory levels:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Inventory levels:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[mn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{E043A09B-CAFA-47D9-8357-8A3015913FC4}' />
+    </worksheet>
+    <worksheet name='Supply Chain Costs Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Cost Value' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]' field-type='quantitative' max='#2023-12-29 02:13:55.933#' min='#2023-08-08 07:20:48.965#' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' field-type='quantitative' max='23313.353201592552' min='-3345.7374077382597' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' palette='orange_blue_white_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='1308' />
+                <format attr='maxwidth' value='1308' />
+                <format attr='minheight' value='640' />
+                <format attr='maxheight' value='640' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{493357A9-2998-4EA9-9EBD-B0A9356B41BD}' />
+    </worksheet>
+    <worksheet name='Transit Times by Carrier and Delivery Status'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='supply_chain_data (1)' name='federated.1psv99n0gpk3m61bdbvk50oo3fil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1psv99n0gpk3m61bdbvk50oo3fil'>
+            <column caption='On-Time Delivery' datatype='integer' name='[Calculation_239253789924053000]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Fullfillment Status] = &quot;Pass&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='string' name='[Fullfillment Status]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of products sold]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Shipping carriers]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Shipping times]' role='measure' type='quantitative' />
+            <column-instance column='[Shipping times]' derivation='Avg' name='[avg:Shipping times:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fullfillment Status]' derivation='None' name='[none:Fullfillment Status:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Shipping carriers]' derivation='None' name='[none:Shipping carriers:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_239253789924053000]' derivation='Sum' name='[sum:Calculation_239253789924053000:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of products sold]' derivation='Sum' name='[sum:Number of products sold:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1psv99n0gpk3m61bdbvk50oo3fil].[avg:Shipping times:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Calculation_239253789924053000:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Shipping carriers:nk]' />
+              <shape column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' />
+              <text column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Shipping carriers:nk]' />
+              <lod column='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[Multiple Values]</rows>
+        <cols>[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Number of products sold:qk]</cols>
+      </table>
+      <simple-id uuid='{0F98313F-4AAD-470D-BF51-2E1069A4A6E0}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98120' id='21' param='horz' type-v2='layout-flow' w='99040' x='480' y='940'>
+            <zone h='98120' id='6' type-v2='layout-basic' w='99040' x='480' y='940'>
+              <zone h='51240' id='3' type-v2='empty' w='1922' x='97598' y='47820'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='45833' id='5' name='Inventory Trends Over Time' w='52842' x='480' y='53227'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='52287' id='10' name='Current Inventory Levels by Product and Warehouse' w='52842' x='480' y='940'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='46880' id='11' name='Order Fulfillment Status Over Time' w='46198' x='53322' y='940'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='51240' id='19' name='On-Time Delivery Rates by Product or Customer' w='44276' x='53322' y='47820'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='85' h='11986' id='9' is-fixed='true' name='Inventory Trends Over Time' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' type-v2='color' w='8703' x='5822' y='15276' />
+        <zone h='12691' id='12' name='Order Fulfillment Status Over Time' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type-v2='color' w='9364' x='89556' y='3055' />
+        <zone h='9283' id='22' name='On-Time Delivery Rates by Product or Customer' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' type-v2='color' w='11164' x='88355' y='48531' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='29' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='280' h='52287' id='10' is-fixed='true' name='Current Inventory Levels by Product and Warehouse' w='52842' x='480' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46880' id='11' is-fixed='true' name='Order Fulfillment Status Over Time' w='46198' x='53322' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12691' id='12' name='Order Fulfillment Status Over Time' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type-v2='color' w='9364' x='89556' y='3055'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='51240' id='19' is-fixed='true' name='On-Time Delivery Rates by Product or Customer' w='44276' x='53322' y='47820'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9283' id='22' name='On-Time Delivery Rates by Product or Customer' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' type-v2='color' w='11164' x='88355' y='48531'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45833' id='5' is-fixed='true' name='Inventory Trends Over Time' w='52842' x='480' y='53227'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='85' h='11986' id='9' name='Inventory Trends Over Time' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' type-v2='color' w='8703' x='5822' y='15276'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9BEFA5E9-04A7-4AF4-867D-9ECC5A994BE9}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98120' id='11' param='horz' type-v2='layout-flow' w='99040' x='480' y='940'>
+            <zone h='98120' id='6' type-v2='layout-basic' w='99040' x='480' y='940'>
+              <zone h='42421' id='13' name='Defect Rate Trends Over Time' w='42604' x='480' y='940'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='42421' id='14' name='Transit Times by Carrier and Delivery Status' w='36670' x='43084' y='940'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='55699' id='17' name='Average Delivery Time by Supplier' w='24490' x='480' y='43361'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='55699' id='19' name='Delivery Status Trends Over Time' w='46218' x='24970' y='43361'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='55699' id='23' name='Supply Chain Costs Over Time' w='28332' x='71188' y='43361'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='42421' id='24' name='Cost Distribution by Type' w='19766' x='79754' y='940'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='12221' id='15' name='Transit Times by Carrier and Delivery Status' pane-specification-id='1' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type-v2='shape' w='8403' x='67047' y='8813' />
+        <zone h='10341' id='25' name='Cost Distribution by Type' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Pivot Field Names:nk]' type-v2='color' w='8643' x='91357' y='6345' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1900' minheight='1900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='32' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='280' h='42421' id='13' is-fixed='true' name='Defect Rate Trends Over Time' w='42604' x='480' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42421' id='14' is-fixed='true' name='Transit Times by Carrier and Delivery Status' w='36670' x='43084' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12221' id='15' name='Transit Times by Carrier and Delivery Status' pane-specification-id='1' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type-v2='shape' w='8403' x='67047' y='8813'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42421' id='24' is-fixed='true' name='Cost Distribution by Type' w='19766' x='79754' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10341' id='25' name='Cost Distribution by Type' pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Pivot Field Names:nk]' type-v2='color' w='8643' x='91357' y='6345'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='55699' id='17' is-fixed='true' name='Average Delivery Time by Supplier' w='24490' x='480' y='43361'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='55699' id='19' is-fixed='true' name='Delivery Status Trends Over Time' w='46218' x='24970' y='43361'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='55699' id='23' is-fixed='true' name='Supply Chain Costs Over Time' w='28332' x='71188' y='43361'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DB6F974D-F78E-4F12-A044-EAA5F5476F15}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Supply Chain Management Dashboard
+</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98120' id='1' param='vert' removable='false' type-v2='layout-flow' w='99034' x='483' y='940'>
+            <zone h='4935' id='3' type-v2='title' w='99034' x='483' y='940' />
+            <zone h='9283' id='4' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99034' x='483' y='5875' />
+            <zone h='83902' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99034' x='483' y='15158'>
+              <flipboard active-id='2' nav-type='number' show-nav-arrows='true'>
+                <story-points>
+                  <story-point captured-sheet='Dashboard 1' id='2' />
+                  <story-point captured-sheet='Dashboard 2' id='5' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{759E2027-2A5E-4BB6-848A-86D9C145B676}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Inventory Trends Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='233'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{ADF6CDEE-C030-4AD5-8333-813FC48415FB}' />
+    </window>
+    <window class='worksheet' name='Current Inventory Levels by Product and Warehouse'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Product type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B4C6B77A-C6BE-4A48-BD8D-359FDCB375E8}' />
+    </window>
+    <window class='worksheet' name='Order Fulfillment Status Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{720B5B54-6CF3-4E45-A0B2-F8258DB0FB28}' />
+    </window>
+    <window class='worksheet' name='On-Time Delivery Rates by Product or Customer'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[usr:Calculation_239253789924892685:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BE55208B-C5E7-42F3-9582-E2CA25A06557}' />
+    </window>
+    <window class='worksheet' name='Average Delivery Time by Supplier'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FD53A1D0-F839-4945-BFA8-D74FE1A495F7}' />
+    </window>
+    <window class='worksheet' name='Defect Rate Trends Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Supplier name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0F67CF0D-DE20-41F2-B5E4-DA4D2065DB03}' />
+    </window>
+    <window class='worksheet' name='Transit Times by Carrier and Delivery Status'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Fullfillment Status:nk]' type='shape' />
+            <card pane-specification-id='1' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Shipping carriers:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CC7330AE-4F1F-4C28-BF2B-82F5CA70FD39}' />
+    </window>
+    <window class='worksheet' name='Delivery Status Trends Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5E9B5E78-C82E-413A-906B-7EDCB47BD626}' />
+    </window>
+    <window class='worksheet' name='Cost Distribution by Type'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[none:Pivot Field Names:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D4D53ABE-5E68-4505-A035-07EC5E7EE610}' />
+    </window>
+    <window class='worksheet' name='Supply Chain Costs Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1psv99n0gpk3m61bdbvk50oo3fil].[sum:Pivot Field Values:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{79AADCCA-64C3-4E53-A40B-00E3AE9781EB}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Current Inventory Levels by Product and Warehouse'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Inventory Trends Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='On-Time Delivery Rates by Product or Customer'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Order Fulfillment Status Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{329C5FC7-8A8B-4BA4-B705-320D351D4304}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='Average Delivery Time by Supplier'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Cost Distribution by Type'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Defect Rate Trends Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Delivery Status Trends Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Supply Chain Costs Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Transit Times by Carrier and Delivery Status'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{723EC73D-3226-41ED-BFE3-E9C4BC9563BD}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Story 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{7478DBBC-89F7-4C25-8EAE-274834AD9077}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Story 1' width='192'>
+      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
+      r3uS/AsrnBOLI5LHQgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
